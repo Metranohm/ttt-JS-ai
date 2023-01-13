@@ -1,5 +1,4 @@
-
-const squares = document.querySelectorAll('.square');
+const squares = document.querySelectorAll('.square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9');
 let currentPlayer = "X";
 let gameOver = false;
 let board = ["", "", "", "", "", "", "", "", ""];
@@ -40,21 +39,23 @@ const resetGame = () => {
 
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', function (e) {
-        if (!gameOver && e.target.textContent === "") {
+        if (!gameOver && e.target.textContent === "" && e.target.textContent !== undefined) {
             e.target.textContent = currentPlayer;
             board[i] = currentPlayer;
             const winner = checkForWin();
             if (winner) {
                 alert(`Player ${winner} wins!`);
                 gameOver = true;
-            } else if (checkForDraw()) {
-                alert("It's a draw!");
-                gameOver = true;
-            } else {
-                currentPlayer = currentPlayer === "X" ? "O" : "X";
-            }
+            } else if (checkForDraw()) {                alert("It's a draw!");
+            gameOver = true;
+        } else {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
         }
-    });
+    }
+});
 }
 
-document.querySelector("#reset-btn").addEventListener("click", resetGame);
+document.querySelector("#reset-btn").addEventListener("click", function(){
+resetGame();
+});
+
