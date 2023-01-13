@@ -1,0 +1,14 @@
+/* CSS Code */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
