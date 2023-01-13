@@ -1,13 +1,14 @@
 /* CSS Code */
 .board {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
   width: 300px;
   height: 300px;
   border: 1px solid black;
 }
 
-.square {
+.square1, .square2, .square3, .square4, .square5, .square6, .square7, .square8, .square9 {
   width: 100px;
   height: 100px;
   border: 1px solid black;
